@@ -18,6 +18,7 @@ def print_board():
 	print " "+board[7]+"  |  "+board[8]+" |  "+board[9]+" "
 	print "    |    |    "
 
+#Main Loop
 while True:
 	os.system("CLS")
 	print_board()

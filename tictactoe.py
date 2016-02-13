@@ -17,7 +17,7 @@ def print_board():
 	print "    |    |    "
 	print " "+board[7]+"  |  "+board[8]+" |  "+board[9]+" "
 	print "    |    |    "
-
+numbers = [1,2,3,4,5,6,7,8,9]
 #Main Loop
 while True:
 	os.system("CLS")
@@ -49,22 +49,29 @@ while True:
 		break
 	
 	#Determine allowed boxes for AI to play
-	numbers = [1,2,3,4,5,6,7,8,9]
+	
 	if choice in numbers:
 		numbers.remove(choice)
+		
 	#Set criteria for a draw
 	if len(numbers)==0:
+		
+		os.system("CLS")
+		print_board()
 		print "It's a DRAW! There are no more spaces to play"
 		break
 		
+		
 	#AI
+	
+	#AI check for win or prevent loss
 	while len(numbers)>0:
-		#AI makes random choice
 		AI_choice = random.choice(numbers)
 		if board[AI_choice]== " ":
 			board[AI_choice] = "O"
 			numbers.remove(AI_choice)
 			break
+		
 	
 	#Check if AI wins
 	if board[1]== "O" and board[2] == "O" and board[3] == "O" or\
